@@ -8,6 +8,6 @@ State: \
 -Camera (movements issue) 
 
 
-Thanks to javidx9:
-olcPixelGameEngine: https://github.com/OneLoneCoder/olcPixelGameEngine
-used for Primitive drawing and window managing.
+Thanks to javidx9: \
+olcPixelGameEngine: https://github.com/OneLoneCoder/olcPixelGameEngine \
+used for primitive drawing and window managing.
