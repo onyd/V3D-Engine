@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Graphics">
+      <UniqueIdentifier>{71debe06-d1a7-4027-b97e-cec8e74f8b36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maths">
+      <UniqueIdentifier>{f940489c-2139-4df7-b3d4-bdde9cf6c474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{b03d88eb-4454-497d-8a82-95a7fe5dbcc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{475c3b49-69fb-41a5-ace2-53887e12024a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Window">
+      <UniqueIdentifier>{c3223cc4-f6ef-4efb-9adc-3acdac7fdd0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Utils">
+      <UniqueIdentifier>{45291563-6e05-4515-b3c5-5e4f39bc7984}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maths\Utils">
+      <UniqueIdentifier>{c9672d46-4f74-41b9-9176-f393abb23ef1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maths\SDT">
+      <UniqueIdentifier>{43c1c2ea-7679-4568-a88e-1feac82334ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maths\Fast">
+      <UniqueIdentifier>{36657c3d-1c3c-49b8-92b0-4d37ee4e77aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphics\Objects">
+      <UniqueIdentifier>{5bb39c92-171d-4a43-a356-a67778107192}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Geometrics.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="QuatEngine.cpp">
+      <Filter>Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="XAble.cpp">
+      <Filter>Graphics\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Maths\SDT</Filter>
+    </ClCompile>
+    <ClCompile Include="Quaternion.cpp">
+      <Filter>Maths\SDT</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Maths\SDT</Filter>
+    </ClCompile>
+    <ClCompile Include="FFT.cpp">
+      <Filter>Maths\Fast</Filter>
+    </ClCompile>
+    <ClCompile Include="FastFunctions.cpp">
+      <Filter>Maths\Fast</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Maths\SDT</Filter>
+    </ClCompile>
+    <ClCompile Include="Line.cpp">
+      <Filter>Maths\SDT</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Graphics\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="PlaneObject.cpp">
+      <Filter>Graphics\Objects</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="QuatEngine.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Lights.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometrics.h">
+      <Filter>Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="olcPixelGameEngine.h" />
+    <ClInclude Include="maths_tests.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="XAble.h">
+      <Filter>Graphics\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Maths\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Conversions.h">
+      <Filter>Maths\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ArrayOps.h">
+      <Filter>Maths\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Maths\SDT</Filter>
+    </ClInclude>
+    <ClInclude Include="Quaternion.h">
+      <Filter>Maths\SDT</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Maths\SDT</Filter>
+    </ClInclude>
+    <ClInclude Include="FFT.h">
+      <Filter>Maths\Fast</Filter>
+    </ClInclude>
+    <ClInclude Include="SpeedTest.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="FastFunctions.h">
+      <Filter>Maths\Fast</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Maths\SDT</Filter>
+    </ClInclude>
+    <ClInclude Include="Line.h">
+      <Filter>Maths\SDT</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlaneObject.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+#ifndef SCENE_H
+#define SCENE_H
+#pragma once
+
+#include <vector>
+#include <algorithm>
+#include "Object.h"
+#include "Matrix.h"
+#include "Lights.h"
+
+class Scene {
+public:
+	Scene() {};
+	Scene(Camera& camera);
+
+	void add_object(Object* _objects);
+	void remove_object(Object* _objects);
+
+	void add_light(Light* _light);
+	void remove_light(Light* _light);
+
+	Camera& getCamera();
+
+	std::vector<Triangle*> render();
+private:
+	std::vector<Object*> objects;
+	std::vector<Light*> lights;
+
+	Camera _camera;
+};
+
+#endif

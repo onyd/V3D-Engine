@@ -1,0 +1,142 @@
+﻿  Camera.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  FFT.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\FFT.cpp(20,11): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Local_documents\VS\V3D\V3D\FFT.cpp(30,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Local_documents\VS\V3D\V3D\FFT.cpp(52,44): warning C4244: 'argument': conversion from 'double' to 'const unsigned int', possible loss of data
+  Light.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Line.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  main.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Matrix.cpp
+  Engine.cpp
+  FastFunctions.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Plane.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  PlaneObject.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  XAble.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Quaternion.cpp(140,16): warning C4244: 'argument': conversion from 'double' to 'dtype', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\Quaternion.cpp(127): message : while compiling class template member function 'Quaternion<float> Quaternion<float>::getRotationQuaternion(float,float,float)'
+C:\Local_documents\VS\V3D\V3D\XAble.cpp(124): message : see reference to function template instantiation 'Quaternion<float> Quaternion<float>::getRotationQuaternion(float,float,float)' being compiled
+C:\Local_documents\VS\V3D\V3D\Quaternion.cpp(140): message : see reference to class template instantiation 'Quaternion<float>' being compiled
+C:\Local_documents\VS\V3D\V3D\Quaternion.cpp(139,16): warning C4244: 'argument': conversion from 'double' to 'dtype', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\Quaternion.cpp(138,16): warning C4244: 'argument': conversion from 'double' to 'dtype', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\Quaternion.cpp(137,16): warning C4244: 'argument': conversion from 'double' to 'dtype', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+  Object.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Object.cpp(182,58): warning C4244: 'argument': conversion from 'float' to 'uint8_t', possible loss of data
+C:\Local_documents\VS\V3D\V3D\Object.cpp(182,43): warning C4244: 'argument': conversion from 'float' to 'uint8_t', possible loss of data
+C:\Local_documents\VS\V3D\V3D\Object.cpp(182,28): warning C4244: 'argument': conversion from 'float' to 'uint8_t', possible loss of data
+  QuatEngine.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\QuatEngine.cpp(80,25): warning C4244: 'argument': conversion from 'dtype' to 'int32_t', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\QuatEngine.cpp(80,13): warning C4244: 'argument': conversion from 'dtype' to 'int32_t', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\QuatEngine.cpp(79,25): warning C4244: 'argument': conversion from 'dtype' to 'int32_t', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\QuatEngine.cpp(79,13): warning C4244: 'argument': conversion from 'dtype' to 'int32_t', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\QuatEngine.cpp(78,37): warning C4244: 'argument': conversion from 'dtype' to 'int32_t', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+C:\Local_documents\VS\V3D\V3D\QuatEngine.cpp(78,25): warning C4244: 'argument': conversion from 'dtype' to 'int32_t', possible loss of data
+          with
+          [
+              dtype=float
+          ]
+  Quaternion.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Scene.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Geometrics.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Vector.cpp
+C:\Local_documents\VS\V3D\V3D\Constants.h(5,39): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(6,40): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(7,45): warning C4305: 'initializing': truncation from 'double' to 'const float'
+C:\Local_documents\VS\V3D\V3D\Constants.h(8,36): warning C4305: 'initializing': truncation from 'double' to 'const float'
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+C:\Local_documents\VS\V3D\V3D\Object.cpp(130): warning C4715: 'Object::clip': not all control paths return a value
+  All 1819 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  V3D.vcxproj -> C:\Local_documents\VS\V3D\Release\V3D.exe
