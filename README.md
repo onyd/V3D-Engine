@@ -2,7 +2,7 @@
 
 Here is a simple open-GL like 3D Engine. 
 
-##State \
+##State 
 
 ### Done
 1. Math library for needed linear algebra 
