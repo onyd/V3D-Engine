@@ -7,23 +7,23 @@ Object::Object()
 {
 }
 
-Object::Object(Vector<float, 3>& pos, Mesh& mesh, unsigned int id)
+Object::Object(Vector<float, 3>& pos, Mesh& mesh, size_t id)
 	: Movable(pos), _mesh(mesh), Directable(), _id(id)
 {
 }
 
-Object::Object(Vector<float, 3>& pos, const string& obj_file_name, unsigned int id)
+Object::Object(Vector<float, 3>& pos, const string& obj_file_name, size_t id)
 	: Movable(pos), Directable(), _id(id)
 {
 	_mesh = Mesh::load_from_file(obj_file_name);
 }
 
-void Object::setId(unsigned int id)
+void Object::setId(size_t id)
 {
 	_id = id;
 }
 
-unsigned int Object::getId()
+size_t Object::getId()
 {
 	return _id;
 }
@@ -37,15 +37,15 @@ vector<Triangle*> Object::render(Camera& cam, vector<Light*>& lights)
 		t.matmul(model_matrix);
 
 		Vector<float, 3> normal = t.get_normal().normalized();
-		if (isVisible(t, normal, cam)) {
+		if (this->isVisible(t, normal, cam)) {
 			// Triangle is now in view space
 			t.matmul(cam.getViewMatrix());
-			applyLights(t, lights, normal);
-			if (isInView(t, cam)) {
+			this->applyLights(t, lights, normal);
+			if (this->isInView(t, cam)) {
 
 				// Clipping
 				Triangle* output[2] = { new Triangle, new Triangle };
-				unsigned int nClipped = this->clip(t, cam.getEyePlane(), output[0], output[1]);
+				size_t nClipped = this->clip(t, cam.getEyePlane(), output[0], output[1]);
 				if (nClipped == 1) {
 					project(output[0], cam);
 					rendered.push_back(output[0]);
@@ -65,15 +65,15 @@ vector<Triangle*> Object::render(Camera& cam, vector<Light*>& lights)
 			}
 		}
 	}
-	if (rendered.size() > 0) {
-		cout << rendered.size() << endl;
-	}
+	//if (rendered.size() > 0) {
+	//	cout << rendered.size() << endl;
+	//}
 	return rendered;
 }
 
-unsigned int Object::countOutsidePoints(const Triangle& t, const Plane<float>& p) const
+size_t Object::countOutsidePoints(const Triangle& t, const Plane<float>& p) const
 {
-	unsigned int nOutside = 0;
+	size_t nOutside = 0;
 
 	if (p.getNormal().inner_product(t.p[0]) + p.getD() < 0) { nOutside++; }
 	if (p.getNormal().inner_product(t.p[1]) + p.getD() < 0) { nOutside++; }
@@ -81,12 +81,12 @@ unsigned int Object::countOutsidePoints(const Triangle& t, const Plane<float>& p
 	return nOutside;
 }
 
-unsigned int Object::clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2)
+size_t Object::clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2)
 {
 	Vector<float, 3>* insides[3];
 	Vector<float, 3>* outsides[3];
-	unsigned int nInside = 0;
-	unsigned int nOutside = 0;
+	size_t nInside = 0;
+	size_t nOutside = 0;
 
 	// Count and sort inside and outside points according to the plane
 	if (p.getNormal().inner_product(t.p[0]) + p.getD() >= 0) { insides[nInside++] = &t.p[0]; }
@@ -162,7 +162,7 @@ bool Object::isVisible(const Triangle& t, Vector<float, 3>&normal, Camera& cam) 
 void Object::project(Triangle* t, Camera& cam)
 {
 	// Projects
-	for (unsigned int i = 0; i < 3; i++) {
+	for (size_t i = 0; i < 3; i++) {
 		Vector<float, 4> projected = vector4_cast(t->p[i]) * cam.getProjectionMatrix();
 		if (projected[3] != 0.0f) {
 			t->p[i] = vector3_cast(projected) / projected[3];

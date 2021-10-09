@@ -25,12 +25,12 @@ public:
 	};
 
 	template<class T>
-	static void amortizedTime(function<void(T)> f, const string& name, T min, T max, unsigned int N = 100) {
+	static void amortizedTime(function<void(T)> f, const string& name, T min, T max, size_t N = 100) {
 		default_random_engine generator;
 		uniform_real_distribution<T> distribution(min, max);
 
 		long time = 0;
-		for (unsigned int i = 0; i < N; i++) {
+		for (size_t i = 0; i < N; i++) {
 			T x = distribution(generator);
 			auto t1 = high_resolution_clock::now();
 			f(x);
@@ -46,12 +46,12 @@ public:
 		uniform_real_distribution<T> distribution(min, max);
 
 		array<T, N> values;
-		for (unsigned int i = 0; i < N; i++) {
+		for (size_t i = 0; i < N; i++) {
 			values[i] = distribution(generator);
 		}
 
 		auto t1 = high_resolution_clock::now();
-		for (unsigned int i = 0; i < N; i++) {
+		for (size_t i = 0; i < N; i++) {
 			f(values[i]);
 		}
 		auto t2 = high_resolution_clock::now();

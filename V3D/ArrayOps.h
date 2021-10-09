@@ -7,7 +7,7 @@
 
 // Product of elements
 template<class T, size_t N>
-constexpr unsigned int product(const std::array<T, N>& t);
+constexpr size_t product(const std::array<T, N>& t);
 
 // Sum of elements
 template<class T, size_t N>
@@ -41,17 +41,17 @@ constexpr std::array<T, N> elementDivision(const std::array<T, N>& t1, const std
 
 // Tensor like display std::array with row-major convention
 template <class T, size_t N, size_t S>
-inline T rowMajorGet(const std::array<T, N>& t, const std::array<unsigned int, S>& array_shape, const std::array<size_t, S>& indexes);
+inline T rowMajorGet(const std::array<T, N>& t, const std::array<size_t, S>& array_shape, const std::array<size_t, S>& indexes);
 
 template <class T, size_t N, size_t S>
 void tensor_print(const std::array<T, N>& t, const std::array<size_t, S>& array_shape);
 
 // ------Implementations------
 template<class T, size_t N>
-inline constexpr unsigned int product(const std::array<T, N>& t)
+inline constexpr size_t product(const std::array<T, N>& t)
 {
 	T result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result *= t[i];
 	}
 }
@@ -70,7 +70,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> constantSum(const std::array<T, N>& t1, const T value)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] + value;
 	}
 	return result;
@@ -80,7 +80,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> constantSubstraction(const std::array<T, N>& t1, const T value)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] - value;
 	}
 	return result;
@@ -90,7 +90,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> constantProduct(const std::array<T, N>& t1, const T value)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] * value;
 	}
 	return result;
@@ -100,7 +100,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> constantDivision(const std::array<T, N>& t1, const T value)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] / value;
 	}
 	return result;
@@ -110,7 +110,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> elementSum(const std::array<T, N>& t1, const std::array<T, N>& t2)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] + t2[i];
 	}
 	return result;
@@ -120,7 +120,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> elementSubstraction(const std::array<T, N>& t1, const std::array<T, N>& t2)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] - t2[i];
 	}
 	return result;
@@ -130,7 +130,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> elementProduct(const std::array<T, N>& t1, const std::array<T, N>& t2)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] * t2[i];
 	}
 	return result;
@@ -140,7 +140,7 @@ template<class T, size_t N>
 inline constexpr std::array<T, N> elementDivision(const std::array<T, N>& t1, const std::array<T, N>& t2)
 {
 	std::array<T, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result[i] = t1[i] / t2[i];
 	}
 	return result;
@@ -149,9 +149,9 @@ inline constexpr std::array<T, N> elementDivision(const std::array<T, N>& t1, co
 template<class T, size_t N, size_t S>
 inline T rowMajorGet(const std::array<T, N>& t, const std::array<size_t, S>& array_shape, const std::array<size_t, S>& indexes)
 {
-	unsigned int index = 0;
+	size_t index = 0;
 	// Compute the position in the content
-	unsigned int current = 1;
+	size_t current = 1;
 	for (int i = S - 1; i >= 0; i--) {
 		index += indexes[i] * current;
 		current *= array_shape[i];
@@ -164,7 +164,7 @@ template <class T, size_t N, size_t S>
 void tensor_print(const std::array<T, N>& t, const std::array<size_t, S>& array_shape)
 {
 	// Store the "advancement" of indexes
-	std::array<unsigned int, S> state = { 0 };
+	std::array<size_t, S> state = { 0 };
 
 	// Open all necessary brackets
 	for (int _ = 0; _ < S; _++) {
@@ -190,7 +190,7 @@ void tensor_print(const std::array<T, N>& t, const std::array<size_t, S>& array_
 		if (c > 0 && (state[0] == 0 || state[0] % array_shape[0] != 0)) { 
 			std::cout << std::endl;
 		}
-		for (unsigned int _ = 0; _ < c; _++) {
+		for (size_t _ = 0; _ < c; _++) {
 			if (state[0] == 0 || state[0] % array_shape[0] != 0) { 
 				std::cout << "[";
 			}

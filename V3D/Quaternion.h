@@ -37,7 +37,7 @@ public:
 	static Quaternion<float> getRotationQuaternion(float pitch, float yaw, float roll);
 	static Matrix<float, 4, 4> getRotationMatrix(float pitch, float yaw, float roll);
 
-	static Quaternion<dtype> lookAtQuaternion(const Vector<float, 3>& direction, const Vector<float, 3>& up);
+	static Quaternion<dtype> setLookAtQuaternion(const Vector<float, 3>& direction, const Vector<float, 3>& up);
 
 	dtype pitch();
 	dtype yaw();

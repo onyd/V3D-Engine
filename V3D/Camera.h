@@ -26,6 +26,7 @@ public:
 
 	float getHeight() const;
 	float getWidth() const;
+
 private:
 	void setup(float Zn, float Zf, float fov, float aspect_ratio);
 

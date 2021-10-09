@@ -72,15 +72,11 @@ void Camera::setup(float Zn, float Zf, float fov, float aspect_ratio)
 	float F = 1.0f / tanf(radian(fov / 2.0f));
 	float q = Zn / (Zf - Zn);
 
-	Matrix<float, 4, 4> projection_mat;
-
-	projection_mat(0, 0) = aspect_ratio * F;
-	projection_mat(1, 1) = F;
-	projection_mat(2, 2) = q;
-	projection_mat(2, 3) = 1.0f;
-	projection_mat(3, 2) = -Zf * q;
-
-	_projection_mat = projection_mat;
+	_projection_mat(0, 0) = aspect_ratio * F;
+	_projection_mat(1, 1) = F;
+	_projection_mat(2, 2) = q;
+	_projection_mat(2, 3) = 1.0f;
+	_projection_mat(3, 2) = -Zf * q;
 
 	float c = cosf(fov / 2.0f);
 	float s = sinf(fov / 2.0f);

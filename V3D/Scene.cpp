@@ -39,6 +39,8 @@ std::vector<Triangle*> Scene::render()
 			rendered.push_back(t);
 		}
 	}
+
+	// Sort by z coordinates to keep objects depth ordered
 	std::sort(rendered.begin(), rendered.end(), [](Triangle* t1, Triangle* t2) {
 		return ((t1->p[0][2] + t1->p[1][2] + t1->p[2][2]) > (t2->p[0][2] + t2->p[1][2] + t2->p[2][2]));
 	});

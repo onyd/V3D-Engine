@@ -69,15 +69,15 @@ Vector<dtype, new_size> resize(const Vector<dtype, size>& v, dtype filled_elemen
 {
 	Vector<float, new_size> result;
 	if (size > new_size) {
-		for (unsigned int i = 0; i < new_size; i++) {
+		for (size_t i = 0; i < new_size; i++) {
 			result[i] = v[i];
 		}
 	}
 	else if(size < new_size){
-		for (unsigned int i = 0; i < size; i++) {
+		for (size_t i = 0; i < size; i++) {
 			result[i] = v[i];
 		}
-		for (unsigned int i = size + 1; i < new_size; i++) {
+		for (size_t i = size + 1; i < new_size; i++) {
 			result[i] = filled_element;
 		}
 	}
@@ -92,13 +92,13 @@ std::array<size_t, 1> Vector<dtype, size>::shape() const
 }
 
 template<class dtype, size_t size>
-dtype& Vector<dtype, size>::operator[](unsigned int x)
+dtype& Vector<dtype, size>::operator[](size_t x)
 {
 	return _content.at(x);
 }
 
 template<class dtype, size_t size>
-const dtype& Vector<dtype, size>::operator[](unsigned int x) const
+const dtype& Vector<dtype, size>::operator[](size_t x) const
 {
 	return _content.at(x);
 }
@@ -134,8 +134,8 @@ template<size_t cols>
 Vector<dtype, cols> Vector<dtype, size>::matmul(const Matrix<dtype, size, cols>& other) const
 {
 	Vector<dtype, size> result;
-	for (unsigned int j = 0; j < cols; j++) {
-		for (unsigned int k = 0; k < size; k++) {
+	for (size_t j = 0; j < cols; j++) {
+		for (size_t k = 0; k < size; k++) {
 			result[j] += (*this)[k] * other(k, j);
 		}
 	}

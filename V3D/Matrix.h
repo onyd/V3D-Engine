@@ -20,7 +20,7 @@ public:
 	Matrix<dtype, rows, cols>(const std::array<dtype, rows*cols>& content);
 
 	// Accessors
-	std::array<unsigned int, 2> shape() const;
+	std::array<size_t, 2> shape() const;
 	dtype& operator()(size_t i, size_t j);
 	const dtype& operator()(size_t i, size_t j) const;
 

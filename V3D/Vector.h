@@ -38,15 +38,14 @@ public:
 	// Casts
 	friend Quaternion<dtype> quaternion_cast<dtype>(const Vector<dtype, 3>& v);
 	friend Quaternion<dtype> quaternion_cast<dtype>(const Vector<dtype, 4>& v);
-	//template<size_t new_size>
-	//friend Vector<dtype, new_size> resize<dtype, size>(const Vector<dtype, size>& v, dtype filled_element);
+	
 	friend Vector<dtype, 4> vector4_cast<dtype>(const Vector<dtype, 3>& v);
 	friend Vector<dtype, 3> vector3_cast<dtype>(const Vector<dtype, 4>& v);
 
 	// Accessors
 	std::array<size_t, 1> shape() const;
-	dtype& operator[](unsigned int x);
-	const dtype& operator[](unsigned int x) const;
+	dtype& operator[](size_t x);
+	const dtype& operator[](size_t x) const;
 
 	// + -
 	Vector<dtype, size> operator+(const Vector<dtype, size>& other) const;

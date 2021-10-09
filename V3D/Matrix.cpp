@@ -32,9 +32,9 @@ Matrix<dtype, rows, cols>::Matrix(const Matrix<dtype, rows, cols>& mat)
 
 // Accesors
 template<class dtype, size_t rows, size_t cols>
-std::array<unsigned int, 2> Matrix<dtype, rows, cols>::shape() const
+std::array<size_t, 2> Matrix<dtype, rows, cols>::shape() const
 {
-	return std::array<unsigned int, 2> {rows, cols};
+	return std::array<size_t, 2> {rows, cols};
 }
 
 template<class dtype, size_t rows, size_t cols>
@@ -66,7 +66,7 @@ template<class dtype, size_t N>
 Matrix<dtype, N, N> identityMatrix()
 {
 	Matrix<float, N, N> result;
-	for (unsigned int i = 0; i < N; i++) {
+	for (size_t i = 0; i < N; i++) {
 		result(i, i) = static_cast<dtype>(1);
 	}
 	return result;
@@ -131,9 +131,9 @@ template <size_t cols_2>
 Matrix<dtype, rows, cols_2> Matrix<dtype, rows, cols>::matmul(const Matrix<dtype, cols, cols_2>& other) const
 {
 	Matrix<dtype, rows, cols_2> result;
-	for (unsigned int i = 0; i < rows; i++) {
-		for (unsigned int j = 0; j < cols_2; j++) {
-			for (unsigned int k = 0; k < cols; k++) {
+	for (size_t i = 0; i < rows; i++) {
+		for (size_t j = 0; j < cols_2; j++) {
+			for (size_t k = 0; k < cols; k++) {
 				result(i, j) += (*this)(i, k) * other(k, j);
 			}
 		}
@@ -145,8 +145,8 @@ template<class dtype, size_t rows, size_t cols>
 Vector<dtype, rows> Matrix<dtype, rows, cols>::matmul(const Vector<dtype, cols>& other) const 
 {
 	Vector<dtype, rows> result;
-	for (unsigned int i = 0; i < rows; i++) {
-		for (unsigned int k = 0; k < cols; k++) {
+	for (size_t i = 0; i < rows; i++) {
+		for (size_t k = 0; k < cols; k++) {
 			result[i] += (*this)(i, k) * other[k];
 		}
 	}

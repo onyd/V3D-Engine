@@ -149,7 +149,7 @@ Matrix<float, 4, 4> Quaternion<dtype>::getRotationMatrix(float pitch, float yaw,
 }
 
 template<class dtype>
-Quaternion<dtype> Quaternion<dtype>::lookAtQuaternion(const Vector<float, 3>& direction, const Vector<float, 3>& up)
+Quaternion<dtype> Quaternion<dtype>::setLookAtQuaternion(const Vector<float, 3>& direction, const Vector<float, 3>& up)
 {
 	return Quaternion<dtype>();
 }
@@ -244,7 +244,6 @@ template<class dtype>
 Quaternion<dtype> Quaternion<dtype>::cross_product(const Quaternion<dtype>& x) const
 {
 	//return ((*this) * x - x * (*this)) * (1 / 2);
-
 	return Quaternion<dtype>(a * x.a, c * x.d - d * x.c, d * x.b - b * x.d, b * x.c - c * x.b);
 }
 

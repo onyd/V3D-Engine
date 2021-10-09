@@ -63,13 +63,13 @@ bool V3DQEngine::OnUserUpdate(float fElapsedTime)
 		scene.getCamera().offsetYaw(-2.0f * fElapsedTime);
 
 	if (GetKey(olc::Key::Z).bHeld)
-		scene.getCamera().moveZ(2.0f * fElapsedTime);
+		scene.getCamera().move(scene.getCamera().getDirection() * 0.1f);
 	if (GetKey(olc::Key::S).bHeld)
-		scene.getCamera().moveZ(-2.0f * fElapsedTime);
+		scene.getCamera().move(scene.getCamera().getDirection() * -0.1f);
 	if (GetKey(olc::Key::Q).bHeld)
-		scene.getCamera().moveX(-2.0f * fElapsedTime);
+		scene.getCamera().move(scene.getCamera().getLateral() * -0.1f);
 	if (GetKey(olc::Key::D).bHeld)
-		scene.getCamera().moveX(2.0f * fElapsedTime);
+		scene.getCamera().move(scene.getCamera().getLateral() * 0.1f);
 
 	//o.offsetYaw(0.001f);
 	//o.offsetRoll(0.005f);

@@ -19,16 +19,16 @@ class Object : public Movable, public Directable
 {
 public:
 	Object();
-	Object(Vector<float, 3>& pos, Mesh& mesh, unsigned int id = 0);
-	Object(Vector<float, 3>& pos, const string& obj_file_name, unsigned int id = 0);
-	void setId(unsigned int id);
-	unsigned int getId();
+	Object(Vector<float, 3>& pos, Mesh& mesh, size_t id = 0);
+	Object(Vector<float, 3>& pos, const string& obj_file_name, size_t id = 0);
+	void setId(size_t id);
+	size_t getId();
 
 	virtual vector<Triangle*> render(Camera& cam, vector<Light*>& lights);
 	
 protected:
-	unsigned int countOutsidePoints(const Triangle& t, const Plane<float>& p) const;
-	unsigned int clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2);
+	size_t countOutsidePoints(const Triangle& t, const Plane<float>& p) const;
+	size_t clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2);
 	Matrix<float, 4, 4> getModelMatrix();
 	bool isInView(const Triangle& t, Camera& cam) const;
 	bool isVisible(const Triangle& t, Vector<float, 3>& normal, Camera& cam) const;
@@ -37,7 +37,7 @@ protected:
 
 
 	Mesh _mesh;
-	unsigned int _id;
+	size_t _id;
 };
 
 #endif

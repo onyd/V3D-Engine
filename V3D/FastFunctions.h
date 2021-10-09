@@ -9,7 +9,7 @@ float fast_rsqrt(float number);
 float fast_sqrt(float number);
 
 template<class T>
-float fast_pow(T number, unsigned int n);
+float fast_pow(T number, size_t n);
 template<class T>
 T fast_exp(T x);
 

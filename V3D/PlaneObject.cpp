@@ -1,6 +1,6 @@
 #include "PlaneObject.h"
 
-PlaneObject::PlaneObject(const Vector<float, 3>& normal, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, unsigned int id)
+PlaneObject::PlaneObject(const Vector<float, 3>& normal, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, size_t id)
 {
 	Vector<float, 3> ortho = up.cross_product(normal);
 	Vector<float, 3> points1[3] = { pos, pos + up * height, pos + up * height + ortho * width };
@@ -14,7 +14,7 @@ PlaneObject::PlaneObject(const Vector<float, 3>& normal, const Vector<float, 3>&
 	_pos = pos;
 }
 
-PlaneObject::PlaneObject(const Plane<float>& p, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, unsigned int id)
+PlaneObject::PlaneObject(const Plane<float>& p, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, size_t id)
 	: PlaneObject(p.getNormal(), pos, up, width, height, id)
 {
 }
@@ -29,7 +29,7 @@ vector<Triangle*> PlaneObject::render(Camera& cam, vector<Light*>& lights)
 
 		// Clipping
 		Triangle* output[2] = { new Triangle, new Triangle };
-		unsigned int nClipped = this->clip(t, cam.getEyePlane(), output[0], output[1]);
+		size_t nClipped = this->clip(t, cam.getEyePlane(), output[0], output[1]);
 		if (nClipped == 1) {
 			project(output[0], cam);
 			rendered.push_back(output[0]);

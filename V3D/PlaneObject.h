@@ -8,8 +8,8 @@
 class PlaneObject : public Object
 {
 public:
-	PlaneObject(const Vector<float, 3>& normal, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, unsigned int id = 0);
-	PlaneObject(const Plane<float>& p, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, unsigned int id = 0);
+	PlaneObject(const Vector<float, 3>& normal, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, size_t id = 0);
+	PlaneObject(const Plane<float>& p, const Vector<float, 3>& pos, const Vector<float, 3>& up, float width, float height, size_t id = 0);
 
 	vector<Triangle*> render(Camera& cam, vector<Light*>& lights) override;
 private:

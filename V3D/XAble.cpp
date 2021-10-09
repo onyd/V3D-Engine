@@ -14,12 +14,12 @@ Vector<float, 3> Movable::getPos() const
 	return _pos;
 }
 
-void Movable::setPos(Vector<float, 3>& pos)
+void Movable::setPos(const Vector<float, 3>& pos)
 {
 	_pos = pos;
 }
 
-void Movable::move(Vector<float, 3>& translation)
+void Movable::move(const Vector<float, 3>& translation)
 {
 	_pos += translation;
 }
@@ -54,7 +54,7 @@ Directable::Directable(float pitch, float yaw, float roll)
 void Directable::lookAt(Vector<float, 3>& dir)
 {
 	Vector<float, 3> up(0.0f, 1.0f, 0.0f);
-	Quaternion<float> rot = Quaternion<float>::lookAtQuaternion(dir, up);
+	Quaternion<float> rot = Quaternion<float>::setLookAtQuaternion(dir, up);
 
 	_pitch = rot.pitch();
 	_yaw = rot.yaw();
@@ -63,10 +63,24 @@ void Directable::lookAt(Vector<float, 3>& dir)
 
 Vector<float, 3> Directable::getDirection() const
 {
-	return Vector<float, 3>(
+	// Axes are reversed 
+	Vector<float, 3> dir = Vector<float, 3>(
+		-sin(_yaw) * cos(_pitch),
 		-sin(_pitch),
-		sin(_yaw) * cos(_pitch),
-		-cos(_yaw) * cos(_pitch));
+		cos(_yaw) * cos(_pitch));
+	
+	return dir;
+
+}
+
+Vector<float, 3> Directable::getLateral() const
+{
+	Vector<float, 3> lateral = Vector<float, 3>(
+		-sin(_yaw)*sin(_pitch)*sin(_roll) + cos(_yaw)*cos(_roll),
+		cos(_pitch)*sin(_roll),
+		cos(_yaw)*sin(_pitch)*sin(_roll) + sin(_yaw)*cos(_roll));
+
+	return lateral;
 }
 
 void Directable::setPitch(float pitch)
