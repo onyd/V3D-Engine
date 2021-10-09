@@ -7,12 +7,12 @@ Here is a simple open-GL like 3D Engine.
 ### Done
 - Math library for needed linear algebra 
 - Basic rendering 
-- clipping
+- Clipping
 -  Camera 
 
 ### Issues
 - Fix clipping issue
-- Add drag feature
+- Add drag camera movements feature
 - Add grid and transparency drawing
 - Add bondary feature (first physics)
 
