@@ -2,19 +2,19 @@
 
 Here is a simple open-GL like 3D Engine. 
 
-##State 
+## State 
 
 ### Done
-1. Math library for needed linear algebra 
-2. Basic rendering 
-3. clipping
-4. Camera 
+- Math library for needed linear algebra 
+- Basic rendering 
+- clipping
+-  Camera 
 
 ### Issues
-1. Fix clipping issue
-2. Add drag feature
-3. Add grid and transparency drawing
-4. Add bondary feature (first physics)
+- Fix clipping issue
+- Add drag feature
+- Add grid and transparency drawing
+- Add bondary feature (first physics)
 
 
 ## Thanks
