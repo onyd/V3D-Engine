@@ -10,7 +10,7 @@ Here is a simple open-GL like 3D Engine.
 - Clipping
 -  Camera 
 
-### Issues
+### Issues and missing features
 - Fix clipping issue
 - Add drag camera movements feature
 - Add grid and transparency drawing
