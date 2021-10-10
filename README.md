@@ -7,6 +7,7 @@ Here is a simple open-GL like 3D Engine.
 ### Done
 - Math library for needed linear algebra 
 - Basic rendering 
+- Load .obj
 - Clipping
 -  Camera 
 
