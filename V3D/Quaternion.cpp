@@ -35,6 +35,7 @@ Vector<dtype, 4> vector_cast(const Quaternion<dtype>& q)
 	return Vector<dtype, 4>(q.b, q.c, q.d, q.a);
 }
 
+// Casts
 template <class dtype> 
 Matrix<dtype, 4, 4> rot_matrix_cast(const Quaternion<dtype>& q)
 {
@@ -67,7 +68,6 @@ Matrix<dtype, 4, 4> rot_matrix_cast(const Quaternion<dtype>& q)
 	return result;
 }
 
-// Casts
 template<class dtype>
 Quaternion<dtype> quaternion_cast(const Matrix<dtype, 4, 4>& m)
 {

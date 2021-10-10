@@ -176,7 +176,7 @@ void Object::applyLights(Triangle& t, vector<Light*>& lights, Vector<float, 3>& 
 {
 	float grayScale = 0.0f;
 	for (Light* l : lights) {
-		grayScale += normal.inner_product(l->getDirection());
+		grayScale += normal.inner_product(l->getForward());
 	}
 	grayScale /= lights.size();
 	t.c = t.c + olc::Pixel(255*grayScale, 255*grayScale, 255*grayScale);

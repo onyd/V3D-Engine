@@ -34,8 +34,11 @@ public:
 
 	void lookAt(Vector<float, 3>& dir);
 
-	Vector<float, 3> getDirection() const;
-	Vector<float, 3> getLateral() const;
+	Vector<float, 3> getForward() const;
+	Vector<float, 3> getLeft() const;
+	Vector<float, 3> getUp() const;
+
+	void updateLocalAxes();
 
 	void setPitch(float pitch);
 	void setYaw(float yaw);
@@ -53,6 +56,7 @@ public:
 	Matrix<float, 4, 4> getRotationMatrix() const;
 protected:
 	float _pitch, _yaw, _roll;
+	Vector<float, 3> _forward, _left, _up;
 };
 #endif // !XABLE_H
 
