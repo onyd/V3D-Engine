@@ -90,7 +90,7 @@ void Directable::updateLocalAxes()
 		-cos(_pitch) * sin(_roll),
 		-cos(_yaw) * sin(_pitch) * sin(_roll) - sin(_yaw) * cos(_roll));
 
-	_up = _forward.cross_product(_left) * -1.0f;
+	_up = _forward.cross_product(_left);
 }
 
 

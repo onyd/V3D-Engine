@@ -62,7 +62,7 @@ Vector<dtype, 3> Plane<dtype>::getIntersection(const Line<dtype>& line) const
 	Vector<dtype, 3> N = this->getNormal();
 	dtype NU = N.inner_product(U);
 	Vector<dtype, 3> P = line.getPoint();
-	return  P + U * (-(_d + N.inner_product(P)) / NU);
+	return  P + U * -(_d + N.inner_product(P)) / NU;
 }
 
 #endif // !PLANE_CPP

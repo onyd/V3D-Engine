@@ -23,6 +23,9 @@ public:
 
 	std::vector<Triangle*> render();
 private:
+	void project(Triangle* t, Camera& cam);
+	unsigned int clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2);
+
 	std::vector<Object*> objects;
 	std::vector<Light*> lights;
 

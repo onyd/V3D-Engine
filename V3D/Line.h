@@ -12,7 +12,7 @@ public:
 	Vector<dtype, 3> getPoint() const;
 	Vector<dtype, 3> getDirection() const;
 
-	Vector<dtype, 3> intersect(const Line<dtype>& line) const;
+	//Vector<dtype, 3> intersect(const Line<dtype>& line) const;
 
 private:
 	Vector<dtype, 3> _direction;

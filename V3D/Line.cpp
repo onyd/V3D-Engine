@@ -22,10 +22,10 @@ Vector<dtype, 3> Line<dtype>::getDirection() const
 	return _direction;
 }
 
-template<class dtype>
-Vector<dtype, 3> Line<dtype>::intersect(const Line<dtype>& line) const
-{
-	return Vector<dtype, 3>();
-}
+//template<class dtype>
+//Vector<dtype, 3> Line<dtype>::intersect(const Line<dtype>& line) const
+//{
+//	return Vector<dtype, 3>();
+//}
 
 #endif 

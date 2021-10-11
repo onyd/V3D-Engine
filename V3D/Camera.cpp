@@ -81,11 +81,11 @@ void Camera::setup(float Zn, float Zf, float fov, float aspect_ratio)
 	float c = cosf(fov / 2.0f);
 	float s = sinf(fov / 2.0f);
 	// Build boundaries	
-	_topPlane = Plane<float>(Vector<float, 3>(0.0f, c, s), Vector<float, 3>(0.0f, -Zn / F, 0.0f));
-	_botPlane = Plane<float>(Vector<float, 3>(0.0f, -c, s), Vector<float, 3>(0.0f, Zn / F, 0.0f));
-	_leftPlane = Plane<float>(Vector<float, 3>(c, 0.0f, s), Vector<float, 3>(-Zn / (aspect_ratio * F), 0.0f, 0.0f));
-	_rightPlane = Plane<float>(Vector<float, 3>(-c, 0.0f, s), Vector<float, 3>(Zn / (aspect_ratio * F), 0.0f, 0.0f));
-	_eyePlane = Plane<float>(Vector<float, 3>(0.0f, 0.0f, 1.0f), Vector<float, 3>(0.0f, 0.0f, Zn));
+	_topPlane = Plane<float>(Vector<float, 3>(0.0f, 1.0f, 0.0f), Vector<float, 3>(0.0f, 0.0f, 0.0f));
+	_botPlane = Plane<float>(Vector<float, 3>(0.0f, -1.0f, 0.0f), Vector<float, 3>(0.0f, getHeight() - 1.0f, 0.0f));
+	_leftPlane = Plane<float>(Vector<float, 3>(1.0f, 0.0f, 0.0f), Vector<float, 3>(0.0f, 0.0f, 0.0f));
+	_rightPlane = Plane<float>(Vector<float, 3>(getWidth() - 1.0f, 0.0f, 0.0f), Vector<float, 3>(-1.0f, 0.0f, 0.0f));
+	_eyePlane = Plane<float>(Vector<float, 3>(0.0f, 0.0f, 1.0f), Vector<float, 3>(0.0f, 0.0f, 0.1f));
 
 }
 

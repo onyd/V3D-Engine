@@ -19,34 +19,10 @@ PlaneObject::PlaneObject(const Plane<float>& p, const Vector<float, 3>& pos, con
 {
 }
 
-vector<Triangle*> PlaneObject::render(Camera& cam, vector<Light*>& lights)
+vector<Triangle> PlaneObject::processed_triangle(Camera& cam, vector<Light*>& lights)
 {
-	vector<Triangle*> rendered;
-	for (Triangle t : _mesh.getTriangles()) {
-		t.matmul(cam.getViewMatrix());
-		applyLights(t, lights, _normal);
-		//t.c = olc::Pixel(255, 255, 255);
+	vector<Triangle> rendered;
+	
 
-		// Clipping
-		Triangle* output[2] = { new Triangle, new Triangle };
-		size_t nClipped = this->clip(t, cam.getEyePlane(), output[0], output[1]);
-		if (nClipped == 1) {
-			project(output[0], cam);
-			rendered.push_back(output[0]);
-			delete output[1];
-		}
-		else if (nClipped == 2) {
-			project(output[0], cam);
-			project(output[1], cam);
-
-			rendered.push_back(output[0]);
-			rendered.push_back(output[1]);
-		}
-		else {
-			delete output[0];
-			delete output[1];
-		}
-
-	}
 	return rendered;
 }

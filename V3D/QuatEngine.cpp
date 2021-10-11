@@ -29,23 +29,6 @@ bool V3DQEngine::OnUserCreate()
 	scene.add_object(&o);
 	scene.add_light(&l);
 
-	// Debug planes
-	float F = 1.0f / tanf(radian(fov / 2.0f));
-	float a = h / w;
-	float c = cosf(fov / 2.0f);
-	float s = sinf(fov / 2.0f);
-	Plane<float> topPlane(Vector<float, 3>(0.0f, c, s), Vector<float, 3>(0.0f, -Zn / F, 0.0f));
-	Plane<float> botPlane(Vector<float, 3>(0.0f, -c, s), Vector<float, 3>(0.0f, Zn / F, 0.0f));
-	Plane<float> leftPlane(Vector<float, 3>(c, 0.0f, s), Vector<float, 3>(-Zn / (a * F), 0.0f, 0.0f));
-	Plane<float> rightPlane(Vector<float, 3>(-c, 0.0f, s), Vector<float, 3>(Zn / (a * F), 0.0f, 0.0f));
-	
-	Vector<float, 3> up(0.0f, -1.0f, 0.0f);
-	scene.add_object(new PlaneObject(topPlane, Vector<float, 3>(0.0f, -Zn / F, 0.0f), up, 5.0f, 5.0f));
-	scene.add_object(new PlaneObject(leftPlane, Vector<float, 3>(-Zn / (a * F), 0.0f, 0.0f), up, 5.0f, 5.0f));
-
-	//o.offsetPitch(PI / 4);
-	//o.offsetRoll(PI / 4);
-	
 	return true;
 }
 
@@ -54,9 +37,9 @@ bool V3DQEngine::OnUserUpdate(float fElapsedTime)
 	Clear(olc::BLACK);
 	
 	if (GetKey(olc::Key::UP).bHeld) 
-		scene.getCamera().offsetPitch(-2.0f * fElapsedTime);
-	if (GetKey(olc::Key::DOWN).bHeld)
 		scene.getCamera().offsetPitch(2.0f * fElapsedTime);
+	if (GetKey(olc::Key::DOWN).bHeld)
+		scene.getCamera().offsetPitch(-2.0f * fElapsedTime);
 	if (GetKey(olc::Key::LEFT).bHeld)
 		scene.getCamera().offsetYaw(2.0f * fElapsedTime);
 	if (GetKey(olc::Key::RIGHT).bHeld)
@@ -70,6 +53,10 @@ bool V3DQEngine::OnUserUpdate(float fElapsedTime)
 		scene.getCamera().move(scene.getCamera().getLeft() * 0.1f);
 	if (GetKey(olc::Key::D).bHeld)
 		scene.getCamera().move(scene.getCamera().getLeft() * -0.1f);
+	if (GetKey(olc::Key::SPACE).bHeld)
+		scene.getCamera().move(scene.getCamera().getUp() * -0.1f);
+	if (GetKey(olc::Key::SHIFT).bHeld)
+		scene.getCamera().move(scene.getCamera().getUp() * 0.1f);
 
 	//o.offsetYaw(0.001f);
 	//o.offsetRoll(0.005f);

@@ -24,17 +24,12 @@ public:
 	void setId(size_t id);
 	size_t getId();
 
-	virtual vector<Triangle*> render(Camera& cam, vector<Light*>& lights);
+	virtual vector<Triangle> processed_triangle(Camera& cam, vector<Light*>& lights);
 	
 protected:
-	size_t countOutsidePoints(const Triangle& t, const Plane<float>& p) const;
-	size_t clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2);
 	Matrix<float, 4, 4> getModelMatrix();
-	bool isInView(const Triangle& t, Camera& cam) const;
 	bool isVisible(const Triangle& t, Vector<float, 3>& normal, Camera& cam) const;
-	void project(Triangle* t, Camera& cam);
 	void applyLights(Triangle& t, vector<Light*>& lights, Vector<float, 3>& normal);
-
 
 	Mesh _mesh;
 	size_t _id;
