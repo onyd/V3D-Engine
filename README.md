@@ -16,6 +16,8 @@ Here is a simple open-GL like 3D Engine.
 - Add grid and transparency drawing
 - Add bondary feature (first physics)
 
+### Demo
+![Alt text](/rendering_demo.gif?rax=true "Rendering demonstration")
 
 ## Thanks
 Thanks to javidx9: \
