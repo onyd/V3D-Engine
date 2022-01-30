@@ -9,10 +9,9 @@ Here is a simple open-GL like 3D Engine.
 - Basic rendering 
 - Load .obj
 - Clipping
--  Camera 
+- Camera 
 
 ### Issues and missing features
-- Fix clipping issue
 - Add drag camera movements feature
 - Add grid and transparency drawing
 - Add bondary feature (first physics)
