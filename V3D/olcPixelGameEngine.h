@@ -1019,7 +1019,7 @@ namespace olc
 
 
 /*
-	Object Oriented Mode
+	MeshObject Oriented Mode
 	~~~~~~~~~~~~~~~~~~~~
 
 	If the olcPixelGameEngine.h is called from several sources it can cause

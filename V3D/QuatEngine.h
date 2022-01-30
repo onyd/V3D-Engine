@@ -20,7 +20,7 @@ public:
 	bool OnUserUpdate(float fElapsedTime) override;
 private:
 
-	Object o;
+	MeshObject o;
 	Light l;
 
 	Scene scene;

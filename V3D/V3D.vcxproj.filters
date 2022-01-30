@@ -76,10 +76,19 @@
     <ClCompile Include="Line.cpp">
       <Filter>Maths\SDT</Filter>
     </ClCompile>
-    <ClCompile Include="Object.cpp">
+    <ClCompile Include="MeshObject.cpp">
       <Filter>Graphics\Objects</Filter>
     </ClCompile>
     <ClCompile Include="PlaneObject.cpp">
+      <Filter>Graphics\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GridObject.cpp">
+      <Filter>Graphics\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="LineObject.cpp">
+      <Filter>Graphics\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderableObject.cpp">
       <Filter>Graphics\Objects</Filter>
     </ClCompile>
   </ItemGroup>
@@ -142,10 +151,19 @@
     <ClInclude Include="Line.h">
       <Filter>Maths\SDT</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
+    <ClInclude Include="MeshObject.h">
       <Filter>Graphics\Objects</Filter>
     </ClInclude>
     <ClInclude Include="PlaneObject.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="GridObject.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="LineObject.h">
+      <Filter>Graphics\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderableObject.h">
       <Filter>Graphics\Objects</Filter>
     </ClInclude>
   </ItemGroup>

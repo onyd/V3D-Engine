@@ -8,12 +8,12 @@ Scene::Scene(Camera& camera)
 {
 }
 
-void Scene::add_object(Object* _objects)
+void Scene::add_object(MeshObject* _objects)
 {
 	objects.push_back(_objects);
 }
 
-void Scene::remove_object(Object* _objects)
+void Scene::remove_object(MeshObject* _objects)
 {
 }
 
@@ -34,7 +34,7 @@ Camera& Scene::getCamera()
 std::vector<Triangle*> Scene::render()
 {
 	std::vector<Triangle> rendered;
-	for (Object* o : objects) {
+	for (MeshObject* o : objects) {
 		for (Triangle& t : o->processed_triangle(_camera, lights)) {
 			// Camera front clipping
 			Triangle output[2];
@@ -143,7 +143,7 @@ unsigned int Scene::clip(Triangle& t, const Plane<float>& p, Triangle* out1, Tri
 		return 1;
 	}
 	if (nInside == 1) {
-		out1->c = olc::Pixel(0, 0, 255);
+		out1->c = t.c;
 		out1->p[0] = *insides[0];
 		out1->p[1] = p.getIntersection(Line(*insides[0], *outsides[0]));
 		out1->p[2] = p.getIntersection(Line(*insides[0], *outsides[1]));
@@ -151,12 +151,12 @@ unsigned int Scene::clip(Triangle& t, const Plane<float>& p, Triangle* out1, Tri
 		return 1;
 	}
 	if (nInside == 2) {
-		out1->c = olc::Pixel(255, 0, 0);//t.c;
+		out1->c = t.c;
 		out1->p[0] = *insides[0];
 		out1->p[1] = *insides[1];
 		out1->p[2] = p.getIntersection(Line(*insides[0], *outsides[0]));
 
-		out2->c = olc::Pixel(0, 255, 0);
+		out2->c = t.c;
 		out2->p[0] = *insides[1];
 		out2->p[1] = out1->p[2];
 		out2->p[2] = p.getIntersection(Line(*insides[1], *outsides[0]));

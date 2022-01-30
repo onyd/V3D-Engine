@@ -42,7 +42,7 @@ void Movable::moveZ(float translation)
 
 
 Directable::Directable()
-	: _pitch(0.0f), _yaw(0.0f), _roll(0.0f), _forward(Vector<float, 3>(0.0f, 0.0f, 1.0f)), _left(Vector<float, 3>(-1.0f, 0.0f, 0.0f)), _up(Vector<float, 3>(0.0f, 1.0f, 0.0f))
+	: _pitch(0.0f), _yaw(0.0f), _roll(0.0f), _forward(Vector<float, 3>(0.0f, 0.0f, 1.0f)), _right(Vector<float, 3>(1.0f, 0.0f, 0.0f)), _down(Vector<float, 3>(0.0f, 1.0f, 0.0f))
 {
 }
 
@@ -54,7 +54,7 @@ Directable::Directable(float pitch, float yaw, float roll)
 
 void Directable::lookAt(Vector<float, 3>& dir)
 {
-	Quaternion<float> rot = Quaternion<float>::setLookAtQuaternion(dir, _up);
+	Quaternion<float> rot = Quaternion<float>::setLookAtQuaternion(dir, _down);
 
 	_pitch = rot.pitch();
 	_yaw = rot.yaw();
@@ -67,14 +67,14 @@ Vector<float, 3> Directable::getForward() const
 	return _forward;
 }
 
-Vector<float, 3> Directable::getLeft() const
+Vector<float, 3> Directable::getRight() const
 {
-	return _left;
+	return _right;
 }
 
-Vector<float, 3> Directable::getUp() const
+Vector<float, 3> Directable::getDown() const
 {
-	return _up;
+	return _down;
 }
 
 void Directable::updateLocalAxes()
@@ -85,12 +85,12 @@ void Directable::updateLocalAxes()
 		-sin(_pitch),
 		cos(_yaw) * cos(_pitch));
 
-	_left = Vector<float, 3>(
-		sin(_yaw) * sin(_pitch) * sin(_roll) - cos(_yaw) * cos(_roll),
-		-cos(_pitch) * sin(_roll),
-		-cos(_yaw) * sin(_pitch) * sin(_roll) - sin(_yaw) * cos(_roll));
+	_right = Vector<float, 3>(
+		-sin(_yaw) * sin(_pitch) * sin(_roll) + cos(_yaw) * cos(_roll),
+		cos(_pitch) * sin(_roll),
+		cos(_yaw) * sin(_pitch) * sin(_roll) + sin(_yaw) * cos(_roll));
 
-	_up = _forward.cross_product(_left) * -1.0f;
+	_down = _forward.cross_product(_right);
 }
 
 
@@ -159,13 +159,13 @@ Matrix<float, 4, 4> Directable::getRotationMatrix() const
 {
 	Matrix<float, 4, 4> rot;
 
-	rot(0, 0) = -_left[0];
-	rot(0, 1) = -_left[1];
-	rot(0, 2) = -_left[2];
+	rot(0, 0) = _right[0];
+	rot(0, 1) = _right[1];
+	rot(0, 2) = _right[2];
 
-	rot(1, 0) = _up[0];
-	rot(1, 1) = _up[1];
-	rot(1, 2) = _up[2];
+	rot(1, 0) = _down[0];
+	rot(1, 1) = _down[1];
+	rot(1, 2) = _down[2];
 
 	rot(2, 0) = _forward[0];
 	rot(2, 1) = _forward[1];

@@ -4,7 +4,7 @@
 
 #include <vector>
 #include <algorithm>
-#include "Object.h"
+#include "MeshObject.h"
 #include "Matrix.h"
 #include "Lights.h"
 
@@ -13,8 +13,8 @@ public:
 	Scene() {};
 	Scene(Camera& camera);
 
-	void add_object(Object* _objects);
-	void remove_object(Object* _objects);
+	void add_object(MeshObject* _objects);
+	void remove_object(MeshObject* _objects);
 
 	void add_light(Light* _light);
 	void remove_light(Light* _light);
@@ -26,7 +26,7 @@ private:
 	void project(Triangle* t, Camera& cam);
 	unsigned int clip(Triangle& t, const Plane<float>& p, Triangle* out1, Triangle* out2);
 
-	std::vector<Object*> objects;
+	std::vector<MeshObject*> objects;
 	std::vector<Light*> lights;
 
 	Camera _camera;

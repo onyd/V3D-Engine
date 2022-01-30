@@ -19,10 +19,3 @@ PlaneObject::PlaneObject(const Plane<float>& p, const Vector<float, 3>& pos, con
 {
 }
 
-vector<Triangle> PlaneObject::processed_triangle(Camera& cam, vector<Light*>& lights)
-{
-	vector<Triangle> rendered;
-	
-
-	return rendered;
-}

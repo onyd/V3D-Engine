@@ -11,7 +11,7 @@ bool V3DQEngine::OnUserCreate()
 {
 	// Load objects
 	Vector<float, 3> obj_pos = Vector<float, 3>(1.0f, 0.0f, 5.1f);
-	o = Object(obj_pos, "teapot.obj");
+	o = MeshObject(obj_pos, "teapot.obj");
 	
 	// Scene
 	Vector<float, 3> c_pos(0.0f, 0.0f, 0.0f);
@@ -50,13 +50,13 @@ bool V3DQEngine::OnUserUpdate(float fElapsedTime)
 	if (GetKey(olc::Key::S).bHeld)
 		scene.getCamera().move(scene.getCamera().getForward() * -0.1f);
 	if (GetKey(olc::Key::Q).bHeld)
-		scene.getCamera().move(scene.getCamera().getLeft() * 0.1f);
+		scene.getCamera().move(scene.getCamera().getRight() * -0.1f);
 	if (GetKey(olc::Key::D).bHeld)
-		scene.getCamera().move(scene.getCamera().getLeft() * -0.1f);
+		scene.getCamera().move(scene.getCamera().getRight() * 0.1f);
 	if (GetKey(olc::Key::SPACE).bHeld)
-		scene.getCamera().move(scene.getCamera().getUp() * -0.1f);
+		scene.getCamera().move(scene.getCamera().getDown() * -0.1f);
 	if (GetKey(olc::Key::SHIFT).bHeld)
-		scene.getCamera().move(scene.getCamera().getUp() * 0.1f);
+		scene.getCamera().move(scene.getCamera().getDown() * 0.1f);
 
 	//o.offsetYaw(0.001f);
 	//o.offsetRoll(0.005f);
